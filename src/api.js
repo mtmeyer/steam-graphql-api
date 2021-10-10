@@ -1,28 +1,13 @@
-const { getSteamApp } = require("./steamAppResolver.js");
+import express from "express";
+import { GraphQLObjectType, GraphQLInt, GraphQLSchema } from "graphql";
+import { graphqlHTTP } from "express-graphql";
 
-const express = require("express");
-const { graphqlHTTP } = require("express-graphql");
-const {
-  GraphQLObjectType,
-  GraphQLInt,
-  GraphQLString,
-  GraphQLBoolean,
-  GraphQLSchema,
-} = require("graphql");
+import { getSteamApp } from "./steamAppResolver.js";
+import { steamAppType } from "./steamAppType.js";
 
 const PORT = 9000;
 
 const app = express();
-
-const steamAppType = new GraphQLObjectType({
-  name: "SteamApp",
-  description: "Game/app from steam",
-  fields: {
-    id: { type: GraphQLInt },
-    name: { type: GraphQLString },
-    isFree: { type: GraphQLBoolean },
-  },
-});
 
 const rootQuery = new GraphQLObjectType({
   name: "RootQuery",

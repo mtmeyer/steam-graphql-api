@@ -10,10 +10,12 @@
   "name": "steam-graphql-api",
   "version": "1.0.0",
   "main": "api.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "esbuild": "^0.13.4"
+  },
   "scripts": {
     "start": "nodemon build/api.js",
-    "build": "npx esbuild ./src/*.js --target=es2015 --format=cjs --outdir=build --platform=node"
+    "build": "esbuild ./src/*.js --target=es2015 --format=cjs --outdir=build --platform=node"
   },
   "repository": {
     "type": "git",

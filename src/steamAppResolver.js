@@ -15,11 +15,7 @@ const getSteamApp = async (id) => {
 
   const data = response.data[id].data;
 
-  return {
-    id: data.steam_appid,
-    name: data.name,
-    isFree: data.is_free,
-  };
+  return data;
 };
 
 exports.getSteamApp = getSteamApp;
