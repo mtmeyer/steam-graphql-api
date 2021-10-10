@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 9000;
 
 const app = express();
 
-app.use(cors);
+app.use(cors({ origin: "*" }));
 
 const rootQuery = new GraphQLObjectType({
   name: "RootQuery",
