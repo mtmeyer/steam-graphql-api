@@ -5,7 +5,7 @@ import { graphqlHTTP } from "express-graphql";
 import { getSteamApp } from "./steamAppResolver.js";
 import { steamAppType } from "./steamAppType.js";
 
-const PORT = 9000;
+const PORT = process.env.PORT || 9000;
 
 const app = express();
 
