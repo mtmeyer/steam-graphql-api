@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import { GraphQLObjectType, GraphQLInt, GraphQLSchema } from "graphql";
 import { graphqlHTTP } from "express-graphql";
 
@@ -8,6 +9,8 @@ import { steamAppType } from "./steamAppType.js";
 const PORT = process.env.PORT || 9000;
 
 const app = express();
+
+app.use(cors);
 
 const rootQuery = new GraphQLObjectType({
   name: "RootQuery",
