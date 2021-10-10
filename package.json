@@ -9,7 +9,7 @@
   },
   "name": "steam-graphql-api",
   "version": "1.0.0",
-  "main": "api.js",
+  "main": "build/api.js",
   "devDependencies": {
     "esbuild": "^0.13.4"
   },
